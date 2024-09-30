@@ -7,9 +7,84 @@
 </head>
 <body>
     <script>
-        let punteggio;
-        let risposta;
+        /* riscrivere l'esercizio del quiz rispettando i punti:
+         1 - usare una funzione per fare il sanitize dell'input
+         2 - usare una funzione per il calcolo della percentuale di risposte corrette
         
+        */
+
+         //punto 1
+            //funzione che prende un input dall'utente ed elimina gli spazi iniziali e finali (se presenti)
+            // converte a lowercase l'input 
+            // restituisce l'input "sanificato"
+
+        let punteggio = 0;
+        let risposta;
+        function sanitize(a){
+            a = a.trim().toLowerCase()
+            return a
+        }
+        function calcolapercentuale(b){
+            b = (b * 100) / 5
+            return b
+        }
+        risposta = prompt("1 Domanda: Chi ha scritto La Divina Commedia?")
+        risposta = sanitize(risposta)
+        if (risposta != null && risposta == "dante alighieri"){
+            alert("Risposta esatta!")
+            punteggio++
+        }
+        else{
+            alert("Risposta errata!")
+        }
+        
+
+        risposta = prompt("2 Domanda: Chi ha dipinto la Gioconda?")
+        risposta = sanitize(risposta)
+        if (risposta != null && risposta == "leonardo da vinci"){
+            alert("Risposta esatta!")
+            punteggio++
+        }
+        else{
+            alert("Risposta errata!")
+        }
+
+
+        risposta = prompt("3 Domanda: Chi ha formulato la teoria della relatività?")
+        risposta = sanitize(risposta)
+        if (risposta != null && risposta == "albert einstein"){
+            alert("Risposta esatta!")
+            punteggio++
+        }
+        else{
+            alert("Risposta errata!")
+        }
+
+
+        risposta = prompt("4 Domanda: Qual è il continente più grande per superficie?")
+        risposta = sanitize(risposta)
+        if (risposta != null && risposta == "asia"){
+            alert("Risposta esatta!")
+            punteggio++
+        }
+        else{
+            alert("Risposta errata!")
+        }
+
+
+        risposta = prompt("5 Domanda: Quale continente è conosciuto come il continente nero?")
+        risposta = sanitize(risposta)
+        if (risposta != null && risposta == "africa"){
+            alert("Risposta esatta!")
+            punteggio++
+        }
+        else{
+            alert("Risposta errata!")
+        }
+
+
+        console.log("Il tuo punteggio è stato: " + punteggio + "/5")
+        console.log("Percentuale: " + calcolapercentuale(punteggio) + "%")
     </script>
 </body>
 </html>
